@@ -2,8 +2,11 @@ package Modelo;
 
 import Interfaces.IDevolver;
 import Interfaces.IPrestar;
+import Interfaces.IToJSON;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-public class Libro extends Material implements IDevolver, IPrestar {
+public class Libro extends Material implements IDevolver, IPrestar, IToJSON {
     //atributos
     private int numPaginas;
 
@@ -55,4 +58,21 @@ public class Libro extends Material implements IDevolver, IPrestar {
                 "NumPaginas: " + numPaginas +
                 "," + super.toString();
     }
+
+    @Override
+    public JSONObject toJSON() {
+        JSONObject json = new JSONObject();
+        try{
+            json.put("Titulo", titulo);
+            json.put("Autor", autor);
+            json.put("AnioPublicacion", anioPublicacion);
+            json.put("CantEjemplares", cantEjemplares);
+            json.put("EstaDisponible", estaDisponible);
+            json.put("NumPaginas", numPaginas);
+        }catch(JSONException e){
+            e.printStackTrace();
+        }
+        return json;
+    }
+
 }

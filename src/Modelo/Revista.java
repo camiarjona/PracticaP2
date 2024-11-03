@@ -3,8 +3,11 @@ package Modelo;
 import Excepciones.SuscripcionInactiva;
 import Interfaces.IDevolver;
 import Interfaces.IPrestar;
+import Interfaces.IToJSON;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-public class Revista extends Material implements IDevolver, IPrestar {
+public class Revista extends Material implements IDevolver, IPrestar, IToJSON {
     //atributos
     private int numEdicion;
     private boolean estaSuscripta;
@@ -79,5 +82,22 @@ public class Revista extends Material implements IDevolver, IPrestar {
                 "NumEdicion: " + numEdicion +
                 ", EstaSuscripta: " + estaSuscripta +
                 "," + super.toString();
+    }
+
+    @Override
+    public JSONObject toJSON() {
+        JSONObject json = new JSONObject();
+        try{
+            json.put("Titulo", titulo);
+            json.put("Autor", autor);
+            json.put("AnioPublicacion", anioPublicacion);
+            json.put("CantEjemplares", cantEjemplares);
+            json.put("EstaDisponible", estaDisponible);
+            json.put("NumEdicion", numEdicion);
+            json.put("EstaSuscripta", estaSuscripta);
+        }catch(JSONException e){
+            e.printStackTrace();
+        }
+        return json;
     }
 }

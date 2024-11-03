@@ -1,6 +1,7 @@
 package Modelo;
 
 import Interfaces.ITitulo;
+import org.json.JSONObject;
 
 import java.util.Objects;
 
@@ -87,4 +88,7 @@ public class Material implements ITitulo {
                 ", EstaDisponible: " + estaDisponible +
                 '}';
     }
+
+
 }
+
