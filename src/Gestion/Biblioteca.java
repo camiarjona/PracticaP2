@@ -2,13 +2,16 @@ package Gestion;
 
 import Excepciones.MaterialInexistente;
 import Interfaces.ITitulo;
+import org.json.JSONArray;
+import Interfaces.IToJSON;
+import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class Biblioteca <T extends ITitulo>{
+public class Biblioteca <T extends IToJSON & ITitulo>{
 
     private Set<T> lista;
 
@@ -97,5 +100,14 @@ public class Biblioteca <T extends ITitulo>{
         }
     }
 
+    public JSONArray listaAJSON(){
+        JSONArray jsonArray = new JSONArray();
+        Iterator<T> iterador = lista.iterator();
+        while(iterador.hasNext()){
+            T elemento = iterador.next();
+            jsonArray.put(elemento.toJSON());
+        }
+        return jsonArray;
+    }
 
 }

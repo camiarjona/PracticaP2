@@ -1,6 +1,12 @@
 package Modelo;
 
-public class Articulo extends Material{
+import Interfaces.IToJSON;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+public class Articulo extends Material implements IToJSON {
     //atributos
     private String resumen;
 
@@ -22,5 +28,21 @@ public class Articulo extends Material{
         return " Articulo {" +
                 "Resumen: '" + resumen + '\'' +
                 "," + super.toString();
+    }
+
+    @Override
+    public JSONObject toJSON() {
+        JSONObject json = new JSONObject();
+        try{
+            json.put("Titulo", titulo);
+            json.put("Autor", autor);
+            json.put("AnioPublicacion", anioPublicacion);
+            json.put("CantEjemplares", cantEjemplares);
+            json.put("EstaDisponible", estaDisponible);
+            json.put("Resumen", resumen);
+        }catch(JSONException e){
+            e.printStackTrace();
+        }
+        return json;
     }
 }
