@@ -79,12 +79,12 @@ public class Material implements ITitulo {
 
     @Override
     public String toString() {
-        return "Material {" +
-                "titulo='" + titulo + '\'' +
-                ", autor='" + autor + '\'' +
-                ", anioPublicacion=" + anioPublicacion +
-                ", cantEjemplares=" + cantEjemplares +
-                ", estaDisponible=" + estaDisponible +
+        return " " +
+                "Titulo: '" + titulo + '\'' +
+                ", Autor: '" + autor + '\'' +
+                ", AnioPublicacion: " + anioPublicacion +
+                ", CantEjemplares: " + cantEjemplares +
+                ", EstaDisponible: " + estaDisponible +
                 '}';
     }
 }

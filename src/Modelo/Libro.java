@@ -51,8 +51,8 @@ public class Libro extends Material implements IDevolver, IPrestar {
 
     @Override
     public String toString() {
-        return "Libro{" +
-                "numPaginas=" + numPaginas +
-                "} " + super.toString();
+        return " Libro {" +
+                "NumPaginas: " + numPaginas +
+                "," + super.toString();
     }
 }

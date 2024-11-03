@@ -19,8 +19,8 @@ public class Articulo extends Material{
 
     @Override
     public String toString() {
-        return "Articulo{" +
-                "resumen='" + resumen + '\'' +
-                "} " + super.toString();
+        return " Articulo {" +
+                "Resumen: '" + resumen + '\'' +
+                "," + super.toString();
     }
 }

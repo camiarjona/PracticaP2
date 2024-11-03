@@ -75,9 +75,9 @@ public class Revista extends Material implements IDevolver, IPrestar {
 
     @Override
     public String toString() {
-        return "Revista{" +
-                "numEdicion=" + numEdicion +
-                ", estaSuscripta=" + estaSuscripta +
-                "} " + super.toString();
+        return " Revista {" +
+                "NumEdicion: " + numEdicion +
+                ", EstaSuscripta: " + estaSuscripta +
+                "," + super.toString();
     }
 }
