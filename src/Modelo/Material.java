@@ -1,8 +1,10 @@
 package Modelo;
 
+import Interfaces.ITitulo;
+
 import java.util.Objects;
 
-public class Material {
+public class Material implements ITitulo {
     //atributos
     protected String titulo;
     protected String autor;
@@ -21,6 +23,7 @@ public class Material {
     public Material() {
     }
 
+    @Override
     public String getTitulo() {
         return titulo;
     }
