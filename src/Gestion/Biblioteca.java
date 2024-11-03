@@ -41,8 +41,11 @@ public class Biblioteca <T>{
             else{
                 mensaje = "El elemento " + elemento.toString() + " no pertenece a esta lista.";
             }
-            
         }
+        else{
+            mensaje = "El elemento no puede ser nulo";
+        }
+        return mensaje;
     }
 
 
