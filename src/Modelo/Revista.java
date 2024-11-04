@@ -7,7 +7,7 @@ import Interfaces.IToJSON;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Revista extends Material implements IDevolver, IPrestar, IToJSON {
+public class Revista extends Material implements IDevolver, IPrestar {
     //atributos
     private int numEdicion;
     private boolean estaSuscripta;
@@ -17,6 +17,7 @@ public class Revista extends Material implements IDevolver, IPrestar, IToJSON {
         this.numEdicion = numEdicion;
         this.estaSuscripta = estaSuscripta;
     }
+
 
     public int getNumEdicion() {
         return numEdicion;
@@ -99,5 +100,22 @@ public class Revista extends Material implements IDevolver, IPrestar, IToJSON {
             e.printStackTrace();
         }
         return json;
+    }
+
+    public static Revista traerDeJson(JSONObject json) {
+        try{
+            String titulo = json.getString("Titulo");
+            String autor = json.getString("Autor");
+            int anioPublicacion = json.getInt("AnioPublicacion");
+            int cantEjemplares = json.getInt("CantEjemplares");
+            boolean estaDisponible = json.getBoolean("EstaDisponible");
+            int numEdcion = json.getInt("NumEdicion");
+            boolean estaSuscripta = json.getBoolean("EstaSuscripta");
+
+            return new Revista(titulo, autor, anioPublicacion, cantEjemplares, estaDisponible, numEdcion, estaSuscripta);
+        }catch(JSONException e){
+            e.printStackTrace();
+        }
+        return null;
     }
 }
