@@ -6,7 +6,7 @@ import Interfaces.IToJSON;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Libro extends Material implements IDevolver, IPrestar, IToJSON {
+public class Libro extends Material implements IDevolver, IPrestar {
     //atributos
     private int numPaginas;
 
@@ -14,6 +14,7 @@ public class Libro extends Material implements IDevolver, IPrestar, IToJSON {
         super(titulo, autor, anioPublicacion, cantEjemplares, estaDisponible);
         this.numPaginas = numPaginas;
     }
+
 
     public int getNumPaginas() {
         return numPaginas;
@@ -73,6 +74,22 @@ public class Libro extends Material implements IDevolver, IPrestar, IToJSON {
             e.printStackTrace();
         }
         return json;
+    }
+
+    public static Libro traerDeJson(JSONObject json) {
+        try{
+            String titulo = json.getString("Titulo");
+            String autor = json.getString("Autor");
+            int anioPublicacion = json.getInt("AnioPublicacion");
+            int cantEjemplares = json.getInt("CantEjemplares");
+            boolean estaDisponible = json.getBoolean("EstaDisponible");
+            int numPaginas = json.getInt("NumPaginas");
+
+            return new Libro(titulo, autor, anioPublicacion, cantEjemplares, estaDisponible, numPaginas);
+        }catch(JSONException e){
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

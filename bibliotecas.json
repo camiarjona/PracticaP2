@@ -1,0 +1,35 @@
+[
+    {
+        "Resumen": "Que daño hace la gaseosa",
+        "Autor": "nico",
+        "CantEjemplares": 1,
+        "EstaDisponible": true,
+        "Titulo": "Pepsi",
+        "AnioPublicacion": 2024
+    },
+    {
+        "Autor": "cami",
+        "CantEjemplares": 1,
+        "EstaDisponible": true,
+        "NumEdicion": 1,
+        "EstaSuscripta": true,
+        "Titulo": "Rolling",
+        "AnioPublicacion": 2022
+    },
+    {
+        "Autor": "Anna Todd",
+        "CantEjemplares": 3,
+        "EstaDisponible": true,
+        "NumPaginas": 400,
+        "Titulo": "After 1",
+        "AnioPublicacion": 2020
+    },
+    {
+        "Autor": "Anna Todd",
+        "CantEjemplares": 1,
+        "EstaDisponible": true,
+        "NumPaginas": 450,
+        "Titulo": "After 2",
+        "AnioPublicacion": 2021
+    }
+]

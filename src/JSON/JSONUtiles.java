@@ -1,6 +1,6 @@
 package JSON;
 import org.json.*;
-
+import UI.Menu;
 import java.io.*;
 
 public class JSONUtiles {
@@ -13,7 +13,7 @@ public class JSONUtiles {
         }
     }
 
-    public static void guardarJSONArrayt(JSONArray array, String nombre) {
+    public static void guardarJSONArray(JSONArray array, String nombre) {
         try(FileWriter file = new FileWriter(nombre)){
             file.write(array.toString(4));
         }catch(IOException | JSONException e){

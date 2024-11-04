@@ -1,11 +1,12 @@
 package Modelo;
 
 import Interfaces.ITitulo;
+import Interfaces.IToJSON;
 import org.json.JSONObject;
 
 import java.util.Objects;
 
-public class Material implements ITitulo {
+public class Material implements ITitulo, IToJSON {
     //atributos
     protected String titulo;
     protected String autor;
@@ -89,6 +90,11 @@ public class Material implements ITitulo {
                 '}';
     }
 
+
+    @Override
+    public JSONObject toJSON() {
+        return null;
+    }
 
 }
 
